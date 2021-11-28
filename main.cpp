@@ -103,7 +103,7 @@ string scanner(string palabra1, int &i, char &tipo)
         tipo = 'N';
     }
 
-    else if ( palabra1[i] == '=' || palabra1[i] == '(' || palabra1[i] == ')' || palabra1[i] == ',' || palabra1[i] == ':'||palabra1[i] == '+'||palabra1[i] == '*'||palabra1[i] == '-'||palabra1[i] == '/')
+    else if ( palabra1[i] == '=' || palabra1[i] == '(' || palabra1[i] == ')' || palabra1[i] == ',' || palabra1[i] == ':'||palabra1[i] == '+'||palabra1[i] == '*'||palabra1[i] == '-'||palabra1[i] == '/'||palabra1[i] == ';')
     {
         letra = palabra1[i];
         palabra2 = palabra2 + letra;
@@ -179,8 +179,8 @@ void reconocedor (string nmb,char tipo){
           q = -1;
       break;
       case 4:
-        if(nmb == ";")
-          q = 5;
+        if(nmb == ";"){
+          q = 5;}
         else if(nmb == ",")
           q = 6 ;
         else
@@ -188,6 +188,7 @@ void reconocedor (string nmb,char tipo){
       break;
       case 5:
         if(nmb == "$"){
+          
           q = 100;}
         else
           q = -1;
